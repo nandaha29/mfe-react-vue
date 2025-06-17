@@ -1,0 +1,207 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;500;600;700;800&display=swap');
+
+@import "tailwindcss";
+
+:root {
+  --color-black: #1F1F1F;
+  --color-blue-gradient-start: #0097FE;
+  --color-blue-gradient-end: #14358A;
+  --color-blue: #012B45;
+  --color-dark-grey: #333333;
+  --color-grey: #F9FAFB;
+  --color-white: #FFFFFF;
+  --color-blue-primary: #0057ff;
+  --font-lato: 'Lato', sans-serif;
+}
+
+* {
+  font-family: var(--font-lato) !important;
+}
+@layer utilities {
+  .hover\:bg-blue-gradient:hover {
+    background: linear-gradient(to bottom, var(--color-blue-gradient-start), var(--color-blue-gradient-end));
+  }
+}
+
+@layer components {
+  /* Heading 1 */
+  .heading-1 {
+    @apply font-bold text-2xl text-blue;
+    font-family: var(--font-lato);
+  }
+
+  /* Heading 2 */
+  .heading-2 {
+    @apply font-bold text-3xl text-blue;
+    font-family: var(--font-lato);
+  }
+
+  /* Heading 3 */
+  .heading-3 {
+    @apply font-medium text-xl text-black;
+    font-family: var(--font-lato);
+  }
+
+  /* Normal Text */
+  .normal-text {
+    @apply font-normal text-lg text-dark-grey;
+    font-family: var(--font-lato);
+  }
+
+  .normal-white {
+    @apply font-normal text-sm text-white;
+    font-family: var(--font-lato);
+  }
+
+  .normal-black {
+    @apply font-normal text-sm text-dark-grey;
+    font-family: var(--font-lato);
+  }
+
+  /* Button White */
+  .btn-white {
+    @apply py-2 px-4 rounded font-semibold;
+    font-family: var(--font-lato);
+    font-size: 26px;
+    background-color: var(--color-white);
+    background-image: linear-gradient(90deg, var(--color-blue-gradient-start), var(--color-blue-gradient-end));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    border: 2px solid;
+    border-image: linear-gradient(90deg, var(--color-blue-gradient-start), var(--color-blue-gradient-end)) 1;
+  }
+
+  /* Button Blue */
+  .btn-blue {
+    @apply py-2 px-6 rounded rounded-3xl font-semibold;
+    font-family: var(--font-lato);
+    font-size: 20px;
+    background-image: linear-gradient(to bottom, var(--color-blue-gradient-start), var(--color-blue-gradient-end));
+    color: var(--color-white);
+  }
+
+
+  /* Border */
+  .border-blue-gradient {
+    border: linear-gradient(to bottom, var(--color-blue-gradient-start), var(--color-blue-gradient-end));
+  }
+
+  /* Backgrounds */
+  .bg-blue-gradient {
+    background: linear-gradient(to bottom, var(--color-blue-gradient-start), var(--color-blue-gradient-end));
+  }
+
+  .bg-blue {
+    background-color: var(--color-blue);
+  }
+
+  .bg-grey {
+    background-color: var(--color-grey);
+  }
+
+  .bg-white {
+    background-color: var(--color-white);
+  }
+
+  .bg-blue-light{
+    background: var(--color-blue-gradient-start);
+  }
+
+
+  /* Text Colors */
+  .text-blue {
+    color: var(--color-blue);
+  }
+
+  .text-white {
+    color: var(--color-white);
+  }
+
+  .text-blue-light{
+    color: var(--color-blue-gradient-start);
+  }
+
+  .text-blue-primary{
+    color: var(--color-blue-primary);
+  }
+
+  .text-black {
+    color: var(--color-black);
+  }
+  
+  .text-dark-grey {
+    color: var(--color-dark-grey);
+  }
+
+  .social-icon {
+    @apply flex items-center justify-center w-12 h-12 border border-white text-white rounded-full transition-all duration-300;
+  }
+
+  .social-icon:hover {
+    @apply bg-white text-transparent;
+  }
+
+  .social-icon:hover i {
+    background: linear-gradient(to bottom, #0097FE, #14358A);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .nav-link {
+    @apply relative font-medium transition-all duration-300;
+  }
+
+  .nav-link::after {
+    content: '';
+    @apply absolute left-1/2 -translate-x-1/2 w-0 h-0.5  bg-blue-light transition-all duration-300;
+    bottom: -.5rem;
+  }
+
+  .nav-link:hover::after {
+    @apply w-full; 
+  }
+
+  .nav-link:hover::after,
+  .nav-link-active::after {
+    @apply w-full;
+  }
+
+  .nav-link:hover,
+  .nav-link-active {
+    @apply text-blue-light font-bold border-transparent;
+  }
+
+  /* Efek Hover pada Button Contact */
+  .btn-contact-hover {
+    border:  2px solid var(--color-blue-gradient-start);
+    /* @apply bg-blue; */
+  }
+  
+  .btn-contact-hover:hover {
+    border: 2px solid white; /* Menambahkan border putih saat di-hover */
+  }
+
+
+
+/* ======================= MOBILE ========================== */
+
+/* Mode mobile: saat active, warna teks biru */
+@media (max-width: 768px) {
+  .nav-link {
+    @apply hover:no-underline; /* Menghilangkan efek hover */
+  }
+
+  .nav-link:active {
+    @apply text-blue;
+  }
+}
+
+
+  
+}
+
+
+
