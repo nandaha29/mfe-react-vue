@@ -8,10 +8,8 @@ import {
   JetStreamClient,
   ConsumerOptsBuilder,
   PubAck,
-  Subscription, // Keep if used elsewhere, not directly in this snippet for pull
   ConnectionOptions,
   JetStreamPullSubscription, // Corrected type
-  ConsumerOpts, // Import ConsumerOpts for the plain object
   // ConsumerMessages, // Keep if used elsewhere
 } from "nats.ws";
 

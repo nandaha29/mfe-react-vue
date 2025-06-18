@@ -1,7 +1,7 @@
 <template>
-    <section class="flex flex-col md:flex-row w-full h-screen items-center px-6 md:px-16 lg:px-24 pt-40 md:pt-0">
+    <section class="flex flex-row md:flex-row w-full h-screen items-center px-6 md:px-16 lg:px-24 pt-40 md:pt-0">
       <!-- Container Kiri: Title, Subtitle, dan Span -->
-      <div class="w-full md:w-1/2 flex flex-col justify-center text-center md:text-left">
+      <div class="w-full md:w-1/2 flex flex-col justify-center text-center md:text-left pl-[10rem]">
         <h1 class="text-white heading-1 md:text-4xl font-bold leading-tight">
           Empowering IT with <br /> Open-Source Excellence
         </h1>

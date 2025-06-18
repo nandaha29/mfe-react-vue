@@ -24,10 +24,19 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
+  padding: 0;
   place-items: center;
-  min-width: 320px;
+  width: 100vw !important;
+  overflow-x: hidden;
   min-height: 100vh;
+  box-sizing: border-box;
+}
+
+#root {
+  width: 100vw !important;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
 }
 
 h1 {
@@ -66,3 +75,29 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+/* Force microapp CSS to apply */
+/* [data-microapp] * {
+  all: revert !important;
+}
+
+.vue-component-container {
+  isolation: isolate;
+}
+
+.microapp-force-render {
+  transform: translateZ(0);
+} */
+
+/* Ensure Tailwind classes work in microapps */
+/* [data-microapp="serviceApp"] .bg-blue-500 {
+  background-color: #3b82f6 !important;
+}
+
+[data-microapp="serviceApp"] .text-white {
+  color: #ffffff !important;
+}
+
+[data-microapp="serviceApp"] .p-4 {
+  padding: 1rem !important;
+} */

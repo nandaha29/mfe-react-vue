@@ -4,7 +4,7 @@ import {
     __federation_method_setRemote,
     // @ts-expect-error - vite global var
   } from "__federation__";
-  import { lazy, Suspense, ReactNode, useEffect, useState } from "react";
+  import { ReactNode, useEffect, useState } from "react";
   
   interface RemoteComponentProps {
     url: string;
