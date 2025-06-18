@@ -57,3 +57,4 @@ declare const natsBus: {
 };
 
 export default natsBus;
+// Tidak perlu diubah, hanya pastikan file ini tetap ada.

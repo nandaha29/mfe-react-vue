@@ -186,3 +186,6 @@ function App() {
 }
 
 export default App;
+
+// Untuk microfrontend lain: import { useNats } from 'path/to/nats-bus'
+// lalu publishMessage('click', 'blog/article/123') pada event penting

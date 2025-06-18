@@ -145,3 +145,5 @@ export const getEventHistory = (limit) => natsBus.getEventHistory(limit);
 
 // Export default instance
 export default natsBus;
+
+// Jangan import file ini di project TypeScript!

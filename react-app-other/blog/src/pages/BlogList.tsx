@@ -5,6 +5,8 @@ import FilterTabs from '../components/FilterTabs';
 import ArticleGrid from '../components/ArticleGrid';
 import { Article, Category } from '../types';
 import { testConnection, getCategories, getArticles } from '../services/api-simple'
+// import { publish, subscribe } from "../../../../shared/nats-bus";
+import { publish } from "../../../../shared/nats-bus";
 
 const BlogList: React.FC = () => {
   const [articles, setArticles] = useState<Article[]>([]);
@@ -124,6 +126,12 @@ const BlogList: React.FC = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  // Contoh tracking klik artikel:
+  const handleArticleClick = (articleId: string) => {
+    publish('click', `blog/article/${articleId}`);
+    // ...navigasi ke detail...
+  };
+
   if (error) {
     return (
       <div className="container mx-auto px-4 py-8 max-w-6xl">
@@ -193,6 +201,7 @@ const BlogList: React.FC = () => {
             ? "No articles found matching your criteria."
             : "No articles available."
         }
+        onArticleClick={handleArticleClick} // Tambahkan prop onArticleClick
       />
 
       {/* Pagination */}
