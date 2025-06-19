@@ -2,18 +2,21 @@ import React from 'react';
 import { Article } from '../types';
 import ArticleCard from './ArticleCard';
 
+// Tambahkan prop onArticleClick
 interface ArticleGridProps {
   articles: Article[];
   loading?: boolean;
   emptyMessage?: string; // Tambahkan ini untuk handle empty state
   className?: string;
+  onArticleClick?: (id: string) => void;
 }
 
 const ArticleGrid: React.FC<ArticleGridProps> = ({ 
   articles, 
   loading = false,
   emptyMessage = "No articles available.",
-  className = ''
+  className = '',
+  onArticleClick
 }) => {
   // Loading state
   if (loading) {
@@ -74,7 +77,8 @@ const ArticleGrid: React.FC<ArticleGridProps> = ({
       {articles.map((article) => (
         <ArticleCard 
           key={`${article.id}-${article.category}`} // Force re-render dengan category
-          article={article} 
+          article={article}
+          onClick={() => onArticleClick?.(article.id.toString())}
         />
       ))}
     </div>

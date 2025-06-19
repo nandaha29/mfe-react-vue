@@ -260,3 +260,7 @@ export function useNats(): UseNatsReturn {
 
   return { publishMessage, subscribeToMessages, isConnected, error };
 }
+
+// Gunakan publishMessage('event_type', 'page_or_feature', durationMs) untuk tracking & logging
+// Contoh: publishMessage('click', 'blog/article/123')
+// Contoh: publishMessage('error', 'service/form', undefined)

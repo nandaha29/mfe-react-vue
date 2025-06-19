@@ -4,11 +4,15 @@ import { Article } from '../types';
 
 interface ArticleCardProps {
   article: Article;
+  onClick?: () => void;
 }
 
-const ArticleCard: React.FC<ArticleCardProps> = ({ article }) => {
+const ArticleCard: React.FC<ArticleCardProps> = ({ article, onClick }) => {
   return (
-    <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+    <div
+      onClick={onClick}
+      className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow"
+    >
       <div className="relative">
         <img
           src={article.image}

@@ -73,7 +73,7 @@ class NatsBus {
   }
 
   // Subscribe ke topic tertentu
-  subscribe(subject: string, callback: NatsCallback, options: NatsSubscribeOptions = {}): UnsubscribeFunction {
+  subscribe(subject: string, callback: NatsCallback): UnsubscribeFunction {
     if (!this.subscribers.has(subject)) {
       this.subscribers.set(subject, new Set());
     }
@@ -164,8 +164,8 @@ const natsBus = new NatsBus();
 export const publish = (subject: string, data: any, options?: NatsPublishOptions): string => 
   natsBus.publish(subject, data, options);
 
-export const subscribe = (subject: string, callback: NatsCallback, options?: NatsSubscribeOptions): UnsubscribeFunction => 
-  natsBus.subscribe(subject, callback, options);
+export const subscribe = (subject: string, callback: NatsCallback): UnsubscribeFunction => 
+  natsBus.subscribe(subject, callback);
 
 export const unsubscribe = (subject: string, callback: NatsCallback): void => 
   natsBus.unsubscribe(subject, callback);

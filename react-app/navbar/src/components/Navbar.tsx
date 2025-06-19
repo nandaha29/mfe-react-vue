@@ -83,7 +83,7 @@ const Navbar = () => {
         </div>
 
         {/* Desktop Menu & Contact Button */}
-        <div className="hidden md:flex items-center space-x-8">
+        <div className="md:flex items-center space-x-8">
           {/* Menu Items */}
           <ul className="flex space-x-8">
             {menuItems.map((item) => (
